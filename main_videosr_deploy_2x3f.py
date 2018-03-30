@@ -22,6 +22,16 @@ DATA_TEST='./data/test/city'
 # DATA_TEST='./data/test/hitachi_isee5_001'
 DATA_TRAIN='./data/train/'
 
+img_height = 240
+img_width = 320
+def check_img_size(input_img):
+    input_shape = input_img.shape
+    output_shape = list(input_shape)
+    output_shape[0] = img_height
+    output_shape[1] = img_width
+    output_img = np.zeros(tuple(output_shape))
+    output_img[:input_shape[0], :input_shape[1], :] = input_img
+    return output_img
 
 class VIDEOSR(object):
     def __init__(self):
@@ -33,8 +43,7 @@ class VIDEOSR(object):
         import scipy.misc
         dataPath = DATA_TEST
         inList = sorted(glob.glob(os.path.join(dataPath, 'input{}/*.png').format(scale_factor)))
-        inp = [scipy.misc.imread(i).astype(np.float32) / 255.0 for i in inList]
-        inp = [i[:240, :320, :] for i in inp]
+        inp = [check_img_size(scipy.misc.imread(i).astype(np.float32)) / 255.0 for i in inList]
 
         print 'Testing path: {}'.format(dataPath)
         print '# of testing frames: {}'.format(len(inList))
