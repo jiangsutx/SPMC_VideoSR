@@ -15,6 +15,17 @@ Our results compared with other state-of-the-arts:
 Currently, we release our research code for testing.
 It should produce the same results as in the paper for scale factor `x2` & `x4` and frame number `3`.
 
+## SPMCS Dataset
+We have release the testing set of SPMCS. [download](https://tinyurl.com/y7prfsgd)
+
+It consists `30` different videos, each of them contains `31` frames.
+
+Each sequence contains bicubic downsampled input for `x2`, `x3`, `x4` scale factors. Folder `truth` contains high-resolution ground truth image for calculating PSNR and SSIM.
+
+Since many previous methods use `31` frames to produce one result for central frame, we also evaluate quantative result only for the central frame (the number in our paper). We do not crop boundary or use other postprocessing. 
+
+We evaluete PSNR and SSIM only for Y channel of YUV color space. 
+
 ### Testing
 It would be very easy to understand the `test()` function and test on your own data.
 
