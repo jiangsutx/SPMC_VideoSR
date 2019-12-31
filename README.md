@@ -28,7 +28,7 @@ It should produce the same results as in the paper for scale factor `x2` & `x4` 
 It would be very easy to understand the `test()` function and test on your own data.
 
 ### Training
-We will update the code for training and better reading after recent paper deadline.
+We will update the code for training and better reading after recent deadline.
 
 ## Video Results
 Here we provide video results for `15` sequences for visual and quantitative comparisons.
@@ -54,4 +54,4 @@ If you use any part of our code, or SPMC video SR is useful for your research, p
 ## Contact
 We are glad to hear if you have any suggestions, questions about implementation or sequences for testing.
 
-Please send email to xtao@cse.cuhk.edu.hk
+Please send email to jiangsutx@gmail.com
